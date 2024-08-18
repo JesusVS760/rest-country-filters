@@ -2,7 +2,13 @@
   padding: 25px;
   background: white;
 }
-nav {
+.navbar-container-dark {
+  padding: 25px;
+  background: hsl(209, 23%, 22%);
+  color: white;
+}
+.navbar-container-dark nav,
+.navbar-container nav {
   display: flex;
   align-items: center;
   justify-content: space-between;

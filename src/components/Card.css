@@ -4,12 +4,18 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.card-container {
+.card-container,
+.card-container-dark {
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   max-width: 325px;
 }
+.card-container-dark {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
+
 .country-info {
   padding: 15px;
 }

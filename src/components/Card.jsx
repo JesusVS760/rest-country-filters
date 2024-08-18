@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./Card.css";
 
-const Card = ({ data }) => {
+const Card = ({ data, matchMode }) => {
   const [showItems, setShowItems] = useState(data);
-
   return showItems.map((country) => (
-    <div className="card-container">
+    <div
+      className={!matchMode ? "card-container" : "card-container-dark"}
+      key={country.name}
+    >
       <div className="country-img">
         <img src={country.flag} alt="image" />
       </div>
