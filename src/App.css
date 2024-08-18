@@ -1,0 +1,12 @@
+.app-card-container {
+  background: hsl(0, 0%, 98%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding: 50px;
+}
+.app-wrapper {
+}
+.app-nav-container {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
