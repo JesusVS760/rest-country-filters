@@ -9,9 +9,10 @@ const App = () => {
   const [matchMode, setMatchMode] = useState(false);
 
   const modeColor = (mode) => {
-    console.log(mode);
+    // console.log(mode);
     setMatchMode(mode);
   };
+  const handViewPage = (country) => {};
 
   return (
     <div className="app-wrapper">
@@ -21,7 +22,7 @@ const App = () => {
       <div
         className={matchMode ? "app-card-container-dark" : "app-card-container"}
       >
-        <Card data={data} matchMode={matchMode} />
+        <Card data={data} matchMode={matchMode} page={handViewPage} />
       </div>
     </div>
   );

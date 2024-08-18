@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import "./Card.css";
 
-const Card = ({ data, matchMode }) => {
+const Card = ({ data, matchMode, page }) => {
   const [showItems, setShowItems] = useState(data);
+
+  const handlePage = (country) => {
+    console.log(country);
+    page(country);
+  };
+
   return showItems.map((country) => (
     <div
+      onClick={() => handlePage(country.name)}
       className={!matchMode ? "card-container" : "card-container-dark"}
       key={country.name}
     >
