@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, matchMode, page }) => {
   const [showItems, setShowItems] = useState(data);
-
+  const navigate = useNavigate();
   const handlePage = (country) => {
     // console.log(country);
     page(country);
+    navigate(`/${country}`);
   };
 
   return showItems.map((country) => (

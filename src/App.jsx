@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./Pages/HomePage";
 import NextPage from "./components/NextPage";
 
 const App = () => {
   const [NextPageCountry, setNextPageCountry] = useState("");
+  const [getData, setGetData] = useState([]);
+
+  const gettingData = (data) => {
+    setGetData(data);
+    console.log("Data received:", data);
+  };
 
   const getCountry = (country) => {
     setNextPageCountry(country);
@@ -16,8 +22,14 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route index element={<HomePage getCountry={getCountry} />}></Route>
-          <Route path="" element={<NextPage />}></Route>
+          <Route
+            index
+            element={<HomePage getCountry={getCountry} getData={gettingData} />}
+          ></Route>
+          <Route
+            path="/:countryName"
+            element={<NextPage country={NextPageCountry} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

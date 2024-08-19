@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import json from "../../data.json";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 
-const HomePage = ({ getCountry }) => {
+const HomePage = ({ getCountry, getData }) => {
   const [data, setData] = useState(json);
   const [matchMode, setMatchMode] = useState(false);
 
@@ -15,6 +14,7 @@ const HomePage = ({ getCountry }) => {
   };
   const handViewPage = (country) => {
     getCountry(country);
+    getData(data);
     // console.log(country);
   };
 
