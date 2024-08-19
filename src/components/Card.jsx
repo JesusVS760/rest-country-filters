@@ -5,7 +5,7 @@ const Card = ({ data, matchMode, page }) => {
   const [showItems, setShowItems] = useState(data);
 
   const handlePage = (country) => {
-    console.log(country);
+    // console.log(country);
     page(country);
   };
 

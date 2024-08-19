@@ -1,29 +1,25 @@
 import React, { useState } from "react";
 import "./App.css";
-import json from "../data.json";
-import Card from "./components/Card";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import NextPage from "./components/NextPage";
 
 const App = () => {
-  const [data, setData] = useState(json);
-  const [matchMode, setMatchMode] = useState(false);
+  const [NextPageCountry, setNextPageCountry] = useState("");
 
-  const modeColor = (mode) => {
-    // console.log(mode);
-    setMatchMode(mode);
+  const getCountry = (country) => {
+    setNextPageCountry(country);
+    console.log(country);
   };
-  const handViewPage = (country) => {};
 
   return (
-    <div className="app-wrapper">
-      <div className="app-nav-container">
-        <Navbar modeColor={modeColor} />
-      </div>
-      <div
-        className={matchMode ? "app-card-container-dark" : "app-card-container"}
-      >
-        <Card data={data} matchMode={matchMode} page={handViewPage} />
-      </div>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<HomePage getCountry={getCountry} />}></Route>
+          <Route path="" element={<NextPage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
