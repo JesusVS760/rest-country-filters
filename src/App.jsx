@@ -10,7 +10,7 @@ const App = () => {
 
   const gettingData = (data) => {
     setGetData(data);
-    console.log("Data received:", data);
+    // console.log("Data received:", data);
   };
 
   const getCountry = (country) => {
@@ -28,7 +28,7 @@ const App = () => {
           ></Route>
           <Route
             path="/:countryName"
-            element={<NextPage country={NextPageCountry} />}
+            element={<NextPage sendData={getData} country={NextPageCountry} />}
           ></Route>
         </Routes>
       </BrowserRouter>
