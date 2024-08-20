@@ -32,12 +32,12 @@ const NextPage = ({ sendData }) => {
   useEffect(() => {
     if (foundCountry != null) {
       setCurrencies(foundCountry.currencies[0]);
-      setLanguages(foundCountry.languages[0]);
+      setLanguages(foundCountry.languages);
     }
   }, [foundCountry]);
   console.log("LANG", languages);
 
-  // console.log(foundCountry);
+  console.log(foundCountry);
   console.log("CURR:", currencies);
 
   return (
@@ -61,6 +61,10 @@ const NextPage = ({ sendData }) => {
             <div className="col2">
               <p>Top Level Domain: {foundCountry.topLevelDomain[0]}</p>
               <p>Currencies: {currencies.name}</p>
+              <p>
+                Languages:
+                {languages.map((lang) => `${lang.name}, `)}
+              </p>
               <p></p>
             </div>
           </div>
