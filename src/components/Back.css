@@ -1,0 +1,21 @@
+.back-container button,
+.back-container-dark button {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 5px 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  background: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.back-container button img,
+.back-container button img {
+  width: 35px;
+}
+.back-container button {
+  background: hsl(209, 23%, 22%);
+  color: white;
+}
