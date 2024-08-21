@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./NextPage.css";
 import { useParams } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 const NextPage = ({ sendData }) => {
   const [matchData, setMatchData] = useState(sendData);
@@ -9,6 +9,12 @@ const NextPage = ({ sendData }) => {
   const [currencies, setCurrencies] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [borders, setBorders] = useState([]);
+  const [matchMode, setMatchMode] = useState(false);
+
+  const modeColor = (mode) => {
+    // console.log(mode);
+    setMatchMode(mode);
+  };
 
   const { countryName } = useParams(); // extracts URL NAME TO MAKE AVAIABLE TO COMPONENT
 
@@ -44,9 +50,13 @@ const NextPage = ({ sendData }) => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar modeColor={modeColor} />
       {foundCountry != null ? (
-        <div className="foundCountry-container">
+        <div
+          className={
+            matchMode ? "foundCountry-container-dark" : "foundCountry-container"
+          }
+        >
           <div className="foundCountry-image">
             <img src={foundCountry.flag} alt="found image" />
           </div>
@@ -72,7 +82,10 @@ const NextPage = ({ sendData }) => {
               </div>
             </div>
             <div className="border-countries">
-              <p>Border Countries: {`${borders} `}</p>
+              <p>Border Countries: </p>
+              <div className="border">
+                <p>{`${borders}`} </p>
+              </div>
             </div>
           </div>
         </div>
