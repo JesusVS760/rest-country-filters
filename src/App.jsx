@@ -15,7 +15,7 @@ const App = () => {
 
   const getCountry = (country) => {
     setNextPageCountry(country);
-    console.log(country);
+    // console.log(country);
   };
 
   return (

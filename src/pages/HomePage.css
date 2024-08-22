@@ -1,10 +1,5 @@
-.app-card-container,
-.app-card-container-dark {
+.app-card-container {
   background: hsl(0, 0%, 98%);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  padding: 50px;
 }
 .app-card-container-dark {
   background: hsl(207, 26%, 17%);

@@ -3,6 +3,7 @@ import "./HomePage.css";
 import json from "../../data.json";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
+import Search from "../components/Search";
 
 const HomePage = ({ getCountry, getData }) => {
   const [data, setData] = useState(json);
@@ -22,6 +23,9 @@ const HomePage = ({ getCountry, getData }) => {
     <div className="app-wrapper">
       <div className="app-nav-container">
         <Navbar modeColor={modeColor} />
+      </div>
+      <div className="search">
+        <Search />
       </div>
       <div
         className={matchMode ? "app-card-container-dark" : "app-card-container"}
