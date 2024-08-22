@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ data, matchMode, page }) => {
+const Card = ({ data, matchMode, page, findSearch }) => {
   const [showItems, setShowItems] = useState(data);
   const navigate = useNavigate();
   const handlePage = (country) => {

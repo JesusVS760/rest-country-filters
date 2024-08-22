@@ -47,6 +47,7 @@
 .border {
   gap: 10px;
 }
-.back-button {
+.back-button,
+.back-button-dark {
   padding-bottom: 100px;
 }

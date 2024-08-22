@@ -1,6 +1,11 @@
 .app-card-container {
   background: hsl(0, 0%, 98%);
 }
-.app-card-container-dark {
+.app-card-container-dark,
+.search-dark {
   background: hsl(207, 26%, 17%);
+}
+.search-dark,
+.search {
+  padding-top: 50px;
 }
