@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./RegionFilter.css";
 import arrrowDown from "../assets/arrow-down.png";
-const RegionFilter = () => {
+const RegionFilter = ({ filterRegion }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleRegion = (region) => {
     console.log(region);
+    filterRegion(region);
   };
 
   return (

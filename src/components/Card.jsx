@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ data, matchMode, page, findSearch }) => {
+const Card = ({ data, matchMode, page, findSearch, regionfilter }) => {
   const [showItems, setShowItems] = useState(data);
 
   const navigate = useNavigate();
@@ -12,17 +12,23 @@ const Card = ({ data, matchMode, page, findSearch }) => {
   };
 
   useEffect(() => {
-    if (findSearch !== "") {
-      findSearch = findSearch.toLowerCase();
-      const filterItems = data.filter((country) =>
-        country.name.toLowerCase().includes(findSearch)
+    let filteredData = data;
+
+    if (findSearch) {
+      const searchQuery = findSearch.toLowerCase();
+      filteredData = filteredData.filter((country) =>
+        country.name.toLowerCase().includes(searchQuery)
       );
-      // console.log("filter", filterItems);
-      setShowItems(filterItems);
-    } else {
-      setShowItems(data);
     }
-  }, [findSearch]);
+
+    if (regionfilter) {
+      filteredData = filteredData.filter(
+        (country) => country.region === regionfilter
+      );
+    }
+
+    setShowItems(filteredData);
+  }, [findSearch, regionfilter, data]);
 
   return (
     <div>

@@ -10,6 +10,7 @@ const HomePage = ({ getCountry, getData }) => {
   const [data, setData] = useState(json);
   const [matchMode, setMatchMode] = useState(false);
   const [findingCountry, setFindingCountry] = useState("");
+  const [regionfilter, setRegionFilter] = useState("");
 
   const modeColor = (mode) => {
     setMatchMode(mode);
@@ -18,6 +19,10 @@ const HomePage = ({ getCountry, getData }) => {
     getCountry(country);
     getData(data);
     // console.log(country);
+  };
+
+  const filterRegion = (region) => {
+    setRegionFilter(region);
   };
 
   const findCountry = (country) => {
@@ -32,7 +37,7 @@ const HomePage = ({ getCountry, getData }) => {
       </div>
       <div className={matchMode ? "search-dark" : "search"}>
         <Search matchMode={matchMode} searchCountry={findCountry} />
-        <RegionFilter />
+        <RegionFilter filterRegion={filterRegion} />
       </div>
 
       <div
@@ -43,6 +48,7 @@ const HomePage = ({ getCountry, getData }) => {
           matchMode={matchMode}
           page={handViewPage}
           findSearch={findingCountry}
+          regionFilter={regionfilter}
         />
       </div>
     </div>
