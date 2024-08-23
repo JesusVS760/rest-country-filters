@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +10,17 @@ const Card = ({ data, matchMode, page, findSearch }) => {
     page(country);
     navigate(`/${country}`);
   };
+
+  useEffect(() => {
+    if (findSearch !== "") {
+      const filterItems = data.filter((country) => findSearch == country.name);
+      // console.log("filter", filterItems);
+      setShowItems(filterItems);
+    } else {
+      setShowItems(data);
+      console.log("Must input country");
+    }
+  }, [findSearch]);
 
   return (
     <div>

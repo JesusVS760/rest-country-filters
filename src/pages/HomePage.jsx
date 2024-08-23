@@ -8,7 +8,7 @@ import Search from "../components/Search";
 const HomePage = ({ getCountry, getData }) => {
   const [data, setData] = useState(json);
   const [matchMode, setMatchMode] = useState(false);
-  const [findingCountry, setFindingCountry] = useState(data);
+  const [findingCountry, setFindingCountry] = useState("");
 
   const modeColor = (mode) => {
     setMatchMode(mode);
@@ -20,7 +20,7 @@ const HomePage = ({ getCountry, getData }) => {
   };
 
   const findCountry = (country) => {
-    setFindingCountry(country);
+    setFindingCountry(String(country));
     console.log("finding", country);
   };
 
