@@ -4,6 +4,7 @@ import json from "../../data.json";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
+import RegionFilter from "../components/RegionFilter";
 
 const HomePage = ({ getCountry, getData }) => {
   const [data, setData] = useState(json);
@@ -31,7 +32,9 @@ const HomePage = ({ getCountry, getData }) => {
       </div>
       <div className={matchMode ? "search-dark" : "search"}>
         <Search matchMode={matchMode} searchCountry={findCountry} />
+        <RegionFilter />
       </div>
+
       <div
         className={matchMode ? "app-card-container-dark" : "app-card-container"}
       >
