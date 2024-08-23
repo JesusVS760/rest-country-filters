@@ -14,7 +14,7 @@ const Card = ({ data, matchMode, page, findSearch }) => {
   useEffect(() => {
     if (findSearch !== "") {
       const filterItems = data.filter((country) =>
-        country.name.includes(findSearch)
+        country.name.toLowerCase().includes(findSearch)
       );
       // console.log("filter", filterItems);
       setShowItems(filterItems);
