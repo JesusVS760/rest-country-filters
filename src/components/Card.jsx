@@ -13,6 +13,7 @@ const Card = ({ data, matchMode, page, findSearch }) => {
 
   useEffect(() => {
     if (findSearch !== "") {
+      findSearch = findSearch.toLowerCase();
       const filterItems = data.filter((country) =>
         country.name.toLowerCase().includes(findSearch)
       );
