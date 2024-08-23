@@ -20,8 +20,8 @@ const HomePage = ({ getCountry, getData }) => {
   };
 
   const findCountry = (country) => {
-    setFindingCountry(String(country));
-    console.log("finding", country);
+    setFindingCountry(country);
+    // console.log("finding", country);
   };
 
   return (

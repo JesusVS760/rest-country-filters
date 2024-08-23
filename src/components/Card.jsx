@@ -4,21 +4,22 @@ import { useNavigate } from "react-router-dom";
 
 const Card = ({ data, matchMode, page, findSearch }) => {
   const [showItems, setShowItems] = useState(data);
+
   const navigate = useNavigate();
   const handlePage = (country) => {
-    // console.log(country);
     page(country);
     navigate(`/${country}`);
   };
 
   useEffect(() => {
     if (findSearch !== "") {
-      const filterItems = data.filter((country) => findSearch == country.name);
+      const filterItems = data.filter((country) =>
+        country.name.includes(findSearch)
+      );
       // console.log("filter", filterItems);
       setShowItems(filterItems);
     } else {
       setShowItems(data);
-      console.log("Must input country");
     }
   }, [findSearch]);
 
