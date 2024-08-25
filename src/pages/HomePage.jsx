@@ -18,7 +18,6 @@ const HomePage = ({ getCountry, getData }) => {
   const handViewPage = (country) => {
     getCountry(country);
     getData(data);
-    // console.log(country);
   };
 
   const filterRegion = (region) => {
@@ -27,7 +26,6 @@ const HomePage = ({ getCountry, getData }) => {
 
   const findCountry = (country) => {
     setFindingCountry(country);
-    // console.log("finding", country);
   };
 
   return (
@@ -48,7 +46,7 @@ const HomePage = ({ getCountry, getData }) => {
           matchMode={matchMode}
           page={handViewPage}
           findSearch={findingCountry}
-          regionFilter={regionfilter}
+          regionFilters={regionfilter}
         />
       </div>
     </div>
