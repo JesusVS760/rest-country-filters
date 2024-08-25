@@ -19,8 +19,6 @@ const Card = ({ data, matchMode, page, findSearch, regionFilters }) => {
         country.name.toLowerCase().includes(searchQuery)
       );
     }
-    console.log("Before Region Filtering:", regionFilters, filteredData);
-
     if (regionFilters) {
       console.log("REGION:", regionFilters);
 
@@ -28,9 +26,8 @@ const Card = ({ data, matchMode, page, findSearch, regionFilters }) => {
         (country) => country.region === regionFilters
       );
     }
-    console.log(regionFilters);
     setShowItems(filteredData);
-  }, [findSearch, regionFilters, data]);
+  }, [findSearch, regionFilters]);
 
   return (
     <div>

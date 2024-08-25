@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./RegionFilter.css";
 import arrrowDown from "../assets/arrow-down.png";
-const RegionFilter = ({ filterRegion }) => {
+const RegionFilter = ({ filterRegion, matchMode }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [region, setRegion] = useState("");
 
@@ -15,9 +15,12 @@ const RegionFilter = ({ filterRegion }) => {
       console.log(region);
     }
   }, [region, filterRegion]);
-
   return (
-    <div className="region-filter-container">
+    <div
+      className={
+        matchMode ? "region-filter-container-dark" : "region-filter-container"
+      }
+    >
       <div className="filter-header">
         <h4 onClick={() => setShowMenu(!showMenu)}>
           Filter by Region
@@ -25,13 +28,13 @@ const RegionFilter = ({ filterRegion }) => {
         </h4>
       </div>
       <div className={showMenu ? "filter-options-toggle" : "filter-options"}>
-        <li>
-          <ul onClick={() => setRegion("Africa")}>Africa</ul>
-          <ul onClick={() => setRegion("America")}>America</ul>
-          <ul onClick={() => setRegion("Asia")}>Asia</ul>
-          <ul onClick={() => setRegion("Europe")}>Europe</ul>
-          <ul onClick={() => setRegion("Oceania")}>Oceania</ul>
-        </li>
+        <ul>
+          <li onClick={() => setRegion("Africa")}>Africa</li>
+          <li onClick={() => setRegion("America")}>America</li>
+          <li onClick={() => setRegion("Asia")}>Asia</li>
+          <li onClick={() => setRegion("Europe")}>Europe</li>
+          <li onClick={() => setRegion("Oceania")}>Oceania</li>
+        </ul>
       </div>
     </div>
   );

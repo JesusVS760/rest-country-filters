@@ -35,7 +35,7 @@ const HomePage = ({ getCountry, getData }) => {
       </div>
       <div className={matchMode ? "search-dark" : "search"}>
         <Search matchMode={matchMode} searchCountry={findCountry} />
-        <RegionFilter filterRegion={filterRegion} />
+        <RegionFilter filterRegion={filterRegion} matchMode={matchMode} />
       </div>
 
       <div

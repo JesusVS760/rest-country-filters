@@ -1,11 +1,16 @@
-.region-filter-container {
+.region-filter-container,
+.region-filter-container-dark {
   padding: 25px;
 }
+.region-filter-container-dark {
+  background: hsl(207, 26%, 17%);
+}
 .filter-header {
-  background: gray;
+  background: white;
   padding: 15px;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 .filter-header h4 img {
   width: 20px;
@@ -17,22 +22,31 @@
 }
 .filter-options {
   display: none;
-  background: gray;
+  /* background: gray; */
+}
+li {
+  list-style-type: none;
+  cursor: pointer;
+  padding: 5px;
 }
 
-li {
+.region-filter-container-dark {
   list-style-type: none;
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
-  background: gray;
 }
-li ul {
-  padding-top: 5px;
-}
-.filter-options-toggle {
+
+.region-filter-container-dark .filter-options-toggle {
   display: block;
-  background: gray;
+  background: hsl(209, 23%, 22%);
   border-radius: 10px;
+  padding: 15px;
   margin-top: 5px;
+  color: hsl(0, 0%, 98%);
+}
+.region-filter-container-dark .filter-header {
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
