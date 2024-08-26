@@ -22,7 +22,6 @@
 }
 .filter-options {
   display: none;
-  /* background: gray; */
 }
 li {
   list-style-type: none;
@@ -35,6 +34,12 @@ li {
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
+}
+.filter-options-toggle {
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .region-filter-container-dark .filter-options-toggle {

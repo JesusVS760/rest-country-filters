@@ -22,12 +22,12 @@ const Card = ({ data, matchMode, page, findSearch, regionFilters }) => {
     if (regionFilters) {
       console.log("REGION:", regionFilters);
 
-      filteredData = filteredData.filter(
-        (country) => country.region === regionFilters
+      filteredData = filteredData.filter((country) =>
+        country.region.includes(regionFilters)
       );
     }
     setShowItems(filteredData);
-  }, [findSearch, regionFilters]);
+  }, [findSearch, regionFilters, data]);
 
   return (
     <div>
